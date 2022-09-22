@@ -16,7 +16,7 @@ const getPath = () => {
 };
 
 export default function NavLink({ children, className, to }: Props) {
-  const isActive = getPath().endsWith(to);
+  const isActive = getPath().endsWith(to) || false;
 
   const href = import.meta.env.BASE_URL.slice(0, -1) + to;
 
