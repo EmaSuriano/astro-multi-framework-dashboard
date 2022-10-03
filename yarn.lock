@@ -96,16 +96,15 @@
     "@babel/core" ">=7.0.0-0 <8.0.0"
     "@babel/plugin-transform-react-jsx" "^7.17.12"
 
-"@astrojs/svelte@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/svelte/-/svelte-1.0.0.tgz#8abd0fcaeb35eca0258dd38d08f8c62c96f4b91d"
-  integrity sha512-WmvcEe86j/3wL2xWURo1Kxtgh+s0CVys2j7xQboHr0ZeH9TBlkQuacAT8mWccD1/MikhDVqL/1hnF/n+vRKuGw==
+"@astrojs/svelte@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/svelte/-/svelte-1.0.1.tgz#75695200eeb31f7be429779836240f47ea21a189"
+  integrity sha512-br0yikJvfYuf12aN1XoPuog141Dz/DWC2P+OZrgfjkNpqFBUnDqwIcJPFwFJ7Cwfg3jjzNs94+P/QhaihryGnA==
   dependencies:
     "@sveltejs/vite-plugin-svelte" "^1.0.1"
     postcss-load-config "^3.1.4"
     svelte-preprocess "^4.10.7"
     svelte2tsx "^0.5.11"
-    vite "^3.0.0"
 
 "@astrojs/tailwind@^2.0.1":
   version "2.0.1"
