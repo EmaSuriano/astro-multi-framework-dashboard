@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "test": "astro check",
-    "build": "astro build",
+    "build": "cp ./node_modules/vuetify/dist/vuetify.min.css ./public/vuetify.min.css && astro build",
     "preview": "astro preview"
   },
   "dependencies": {

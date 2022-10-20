@@ -20,3 +20,4 @@ pnpm-debug.log*
 .DS_Store
 
 .temp*
+public/vuetify.min.css

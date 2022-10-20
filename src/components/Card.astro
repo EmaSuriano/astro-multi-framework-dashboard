@@ -1,11 +1,11 @@
 ---
-const { title, size = 1 } = Astro.props;
+const { title, size = 1, className = '' } = Astro.props;
 
-const className = `tw-col-span-${size}`;
+// const className = `tw-col-span-${size}`;
 ---
 
 <div
-  class={`tw-p-4 tw-w-full tw-text-center tw-bg-white tw-rounded-lg tw-border tw-shadow-md sm:tw-p-8 dark:tw-bg-gray-800 dark:tw-border-gray-700 ${className}`}
+  class={`tw-p-4 tw-w-full tw-text-center tw-bg-white tw-rounded-lg tw-border tw-shadow-md sm:tw-p-8 dark:tw-bg-gray-800 dark:tw-border-gray-700  ${className}`}
 >
   <h5
     class="tw-mb-2 tw-text-3xl tw-font-bold tw-text-gray-900 dark:tw-text-white"

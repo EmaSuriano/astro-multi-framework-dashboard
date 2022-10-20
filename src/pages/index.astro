@@ -19,29 +19,31 @@ import Card from '../components/Card.astro';
     >
       <Header title="Multi Framework Dashboard" page="Home" />
 
-      <div class="tw-grid tw-grid-cols-2 tw-gap-4">
-        <Card title="Cube">
-          <HighlighterWrapper client:load framework="svelte">
-            <Graph client:load />
-          </HighlighterWrapper>
-        </Card>
-
-        <Card title="Line graph">
-          <HighlighterWrapper client:load framework="react">
-            <BasicButtons client:load />
-          </HighlighterWrapper>
-        </Card>
-
-        <HighlighterWrapper client:load framework="vue">
-          <Card title="Timeline">
-            <GraphVue client:load />
+      <div class="tw-container tw-mx-auto tw-my-10">
+        <div class="tw-grid tw-grid-cols-3 tw-gap-4">
+          <Card title="Cube">
+            <HighlighterWrapper client:load framework="svelte">
+              <Graph client:load />
+            </HighlighterWrapper>
           </Card>
-        </HighlighterWrapper>
-      </div>
 
-      <HighlighterToggle client:load />
+          <Card title="Line graph" className="tw-col-span-2">
+            <HighlighterWrapper client:load framework="react">
+              <BasicButtons client:load />
+            </HighlighterWrapper>
+          </Card>
+
+          <Card title="Timeline" className="tw-col-span-2">
+            <HighlighterWrapper client:load framework="vue">
+              <GraphVue client:load />
+            </HighlighterWrapper>
+          </Card>
+        </div>
+      </div>
 
       <Footer />
     </main>
+
+    <HighlighterToggle client:load />
   </div>
 </Layout>
