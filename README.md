@@ -2,33 +2,22 @@
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/EmaSuriano/astro-multi-framework-dashboard/tree/latest/examples/basics)
 
-> Dashboard built with Astro with the framework setup for react, vue and svelte.
+> Dashboard built with Astro with the framework setup for React.JS, Vue and Svelte.
+
+![Meme](https://user-images.githubusercontent.com/3399429/196991276-8147d0fb-fb35-4377-9143-bf50fc7f0e9a.jpg)
 
 ## [Demo](https://astro-multi-framework-dashboard.netlify.app)
 
-## 🚀 Project Structure
+## Features
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
+- Support for React, Vue and Svelte.
+- Setup with [Tailwind CSS](https://tailwindcss.com/)
+- State management with [nanostores](https://github.com/nanostores/nanostores) for cross platform data flow.
+- Libraries per framework:
+  - React: [recharts](https://recharts.org/), [MUI Core](https://mui.com/core/)
+  - Svelte: [svelthree](https://svelthree.dev/)
+  - Vue: [Vuetify](https://vuetifyjs.com/en/)
+- Highlighter for demo purposes which graph with which framework.
 
 ## 🧞 Commands
 
@@ -42,7 +31,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run preview`      | Preview your build locally, before deploying       |
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
