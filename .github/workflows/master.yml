@@ -20,7 +20,3 @@ jobs:
       - run: yarn install --frozen-lockfile
 
       - run: yarn build
-
-      - uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist # The folder the action should deploy.

@@ -1,6 +1,5 @@
 {
   "name": "astro-multi-framework-dashboard",
-  "type": "module",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,21 +10,36 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/react": "^1.1.4",
-    "@astrojs/svelte": "^1.0.0",
-    "@astrojs/tailwind": "^2.0.1",
-    "@astrojs/vue": "^1.0.2",
+    "@astrojs/react": "^1.2.1",
+    "@astrojs/svelte": "^1.0.2",
+    "@astrojs/tailwind": "^2.1.1",
+    "@astrojs/vue": "^1.2.0",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@heroicons/react": "^2.0.12",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.9",
     "@nanostores/react": "^0.4.0",
     "@nanostores/vue": "^0.6.0",
-    "astro": "^1.2.8",
+    "@threlte/core": "^4.3.2",
+    "@threlte/extras": "^4.3.0",
+    "astro": "^1.5.1",
     "nanostores": "^0.7.0",
+    "postcss-prefix-selector": "^1.16.0",
     "react": "^18.0.0",
+    "react-charts": "^2.0.0-beta.7",
     "react-dom": "^18.0.0",
-    "svelte": "^3.46.4",
+    "recharts": "^2.1.15",
+    "svelte": "^3.52.0",
+    "svelte-gantt": "^4.0.9-beta",
     "tailwindcss": "^3.0.24",
-    "vue": "^3.2.30"
+    "three": "^0.145.0",
+    "vue": "^3.2.37",
+    "vuetify": "^3.0.0-beta.14"
   },
   "devDependencies": {
-    "@types/react": "^18.0.20"
+    "@types/react": "^18.0.21",
+    "@types/three": "^0.144.0",
+    "sass": "^1.55.0"
   }
 }

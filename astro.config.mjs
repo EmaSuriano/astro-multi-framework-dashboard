@@ -7,7 +7,18 @@ import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://emasuriano.github.io',
-  base: '/astro-multi-framework-dashboard',
-  integrations: [tailwind(), react(), vue(), svelte()],
+  site: 'https://astro-multi-framework-dashboard.netlify.app',
+  integrations: [
+    tailwind(),
+    react(),
+    vue({
+      appEntrypoint: '/src/pages/_app',
+    }),
+    svelte(),
+  ],
+  vite: {
+    ssr: {
+      noExternal: ['three', 'troika-three-text', 'vuetify'],
+    },
+  },
 });

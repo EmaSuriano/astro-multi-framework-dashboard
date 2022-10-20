@@ -1,17 +1,47 @@
 ---
 import Layout from '../layouts/Layout.astro'; // astro
-import Sidebar from '../components/Sidebar'; // react
-import Header from '../components/Header.svelte'; //svelte
+import Header from '../components/Header.astro'; //astro
+import BasicButtons from '../components/BasicButtons'; //react
+import {
+  HighlighterWrapper,
+  HighlighterToggle,
+} from '../components/Highlighter'; //react
+import Graph from '../components/Graph.svelte';
+import GraphVue from '../components/Graph.vue';
+import Footer from '../components/Footer.astro';
+import Card from '../components/Card.astro';
 ---
 
 <Layout title="Astro Dashboard">
-  <div class="flex h-screen overflow-hidden">
-    <Sidebar client:load />
-
+  <div class="tw-flex tw-h-screen tw-overflow-hidden">
     <main
-      class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden"
+      class="tw-relative tw-flex tw-flex-col tw-flex-1 tw-overflow-y-auto tw-overflow-x-hidden"
     >
-      <Header client:load />
+      <Header title="Multi Framework Dashboard" page="Home" />
+
+      <div class="tw-grid tw-grid-cols-2 tw-gap-4">
+        <Card title="Cube">
+          <HighlighterWrapper client:load framework="svelte">
+            <Graph client:load />
+          </HighlighterWrapper>
+        </Card>
+
+        <Card title="Line graph">
+          <HighlighterWrapper client:load framework="react">
+            <BasicButtons client:load />
+          </HighlighterWrapper>
+        </Card>
+
+        <HighlighterWrapper client:load framework="vue">
+          <Card title="Timeline">
+            <GraphVue client:load />
+          </Card>
+        </HighlighterWrapper>
+      </div>
+
+      <HighlighterToggle client:load />
+
+      <Footer />
     </main>
   </div>
 </Layout>

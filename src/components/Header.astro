@@ -1,0 +1,87 @@
+---
+const { title } = Astro.props;
+---
+
+<nav
+  class="tw-bg-white tw-border-gray-200 tw-px-2 sm:tw-px-4 tw-py-2.5 tw-rounded dark:tw-bg-gray-900"
+>
+  <div
+    class="container tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-mx-auto"
+  >
+    <a href="https://flowbite.com/" class="tw-flex tw-items-center">
+      <img
+        src="public/favicon.svg"
+        class="tw-mr-3 tw-h-6 sm:tw-h-9"
+        alt="Flowbite Logo"
+      />
+      <span
+        class="tw-self-center tw-text-xl tw-font-semibold tw-whitespace-nowrap dark:tw-text-white"
+        >{title}
+      </span>
+    </a>
+    <button
+      data-collapse-toggle="navbar-default"
+      type="button"
+      class="tw-inline-flex tw-items-center tw-p-2 tw-ml-3 tw-text-sm tw-text-gray-500 tw-rounded-lg md:tw-hidden hover:tw-bg-gray-100 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-gray-200 dark:tw-text-gray-400 dark:hover:tw-bg-gray-700 dark:focus:tw-ring-gray-600"
+      aria-controls="navbar-default"
+      aria-expanded="false"
+    >
+      <span class="tw-sr-only">Open main menu</span>
+      <svg
+        class="tw-w-6 tw-h-6"
+        aria-hidden="true"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+        ><path
+          fill-rule="evenodd"
+          d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </button>
+    <div
+      class="tw-hidden tw-w-full md:tw-block md:tw-w-auto"
+      id="navbar-default"
+    >
+      <ul
+        class="tw-flex tw-flex-col tw-p-4 tw-mt-4 tw-bg-gray-50 tw-rounded-lg tw-border tw-border-gray-100 md:tw-flex-row md:tw-space-x-8 md:tw-mt-0 md:tw-text-sm md:tw-font-medium md:tw-border-0 md:tw-bg-white dark:tw-bg-gray-800 md:dark:tw-bg-gray-900 dark:tw-border-gray-700"
+      >
+        <li>
+          <a
+            href="#"
+            class="tw-block tw-py-2 tw-pr-4 tw-pl-3 tw-text-white tw-bg-blue-700 tw-rounded md:tw-bg-transparent md:tw-text-blue-700 md:tw-p-0 dark:tw-text-white"
+            aria-current="page">Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="tw-block tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-700 tw-rounded hover:tw-bg-gray-100 md:hover:tw-bg-transparent md:tw-border-0 md:hover:tw-text-blue-700 md:tw-p-0 dark:tw-text-gray-400 md:dark:hover:tw-text-white dark:hover:tw-bg-gray-700 dark:hover:tw-text-white md:dark:hover:tw-bg-transparent"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="tw-block tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-700 tw-rounded hover:tw-bg-gray-100 md:hover:tw-bg-transparent md:tw-border-0 md:hover:tw-text-blue-700 md:tw-p-0 dark:tw-text-gray-400 md:dark:hover:tw-text-white dark:hover:tw-bg-gray-700 dark:hover:tw-text-white md:dark:hover:tw-bg-transparent"
+            >Services</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="tw-block tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-700 tw-rounded hover:tw-bg-gray-100 md:hover:tw-bg-transparent md:tw-border-0 md:hover:tw-text-blue-700 md:tw-p-0 dark:tw-text-gray-400 md:dark:hover:tw-text-white dark:hover:tw-bg-gray-700 dark:hover:tw-text-white md:dark:hover:tw-bg-transparent"
+            >Pricing</a
+          >
+        </li>
+        <li>
+          <a
+            href="#"
+            class="tw-block tw-py-2 tw-pr-4 tw-pl-3 tw-text-gray-700 tw-rounded hover:tw-bg-gray-100 md:hover:tw-bg-transparent md:tw-border-0 md:hover:tw-text-blue-700 md:tw-p-0 dark:tw-text-gray-400 md:dark:hover:tw-text-white dark:hover:tw-bg-gray-700 dark:hover:tw-text-white md:dark:hover:tw-bg-transparent"
+            >Contact</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
