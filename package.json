@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "start": "astro dev",
     "test": "astro check",
-    "build": "cp ./node_modules/vuetify/dist/vuetify.min.css ./public/vuetify.min.css && astro build",
+    "prebuild": "cp ./node_modules/vuetify/dist/vuetify.min.css ./public/vuetify.min.css",
+    "build": "astro build",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -21,9 +22,11 @@
     "@mui/material": "^5.10.9",
     "@nanostores/react": "^0.4.0",
     "@nanostores/vue": "^0.6.0",
+    "@tailwindcss/typography": "^0.5.7",
     "@threlte/core": "^4.3.2",
     "@threlte/extras": "^4.3.0",
     "astro": "^1.5.1",
+    "html-to-image": "^1.10.8",
     "nanostores": "^0.7.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

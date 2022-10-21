@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  @apply tw-h-full;
+}
+
+body {
+  @apply tw-overflow-y-scroll;
+}
+
+h1 {
+  @apply tw-text-2xl;
+}
+
+h2 {
+  @apply tw-text-xl;
+}

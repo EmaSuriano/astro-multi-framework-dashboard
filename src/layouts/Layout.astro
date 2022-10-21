@@ -1,9 +1,30 @@
 ---
-export interface Props {
-  title: string;
-}
+import 'styles.css';
+import Footer from 'components/Footer.astro';
+import Header from 'components/Header.astro';
 
-const { title } = Astro.props;
+const VARIANT_PADDING_MAP = {
+  blog: 'tw-prose',
+  page: 'tw-px-4',
+};
+
+type Props = {
+  page: string;
+  variant?: 'page' | 'blog';
+};
+
+const getVariant = () => {
+  if (Boolean(Astro.props.frontmatter)) {
+    return 'blog';
+  }
+
+  return 'page';
+};
+
+const { page } = (Astro.props.frontmatter || Astro.props) as Props;
+
+const title = 'Multi Framework Dashboard';
+const paddingClass = VARIANT_PADDING_MAP[getVariant()];
 ---
 
 <!DOCTYPE html>
@@ -17,6 +38,16 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <div class="tw-flex tw-h-screen tw-overflow-hidden">
+      <main
+        class="tw-relative tw-flex tw-flex-col tw-flex-1 tw-overflow-y-auto tw-overflow-x-hidden"
+      >
+        <Header title={title} page={page} />
+        <div class={`tw-container tw-mx-auto tw-my-10 ${paddingClass}`}>
+          <slot />
+        </div>
+        <Footer />
+      </main>
+    </div>
   </body>
 </html>

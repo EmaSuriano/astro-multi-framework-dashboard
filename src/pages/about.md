@@ -1,12 +1,15 @@
-# astro-multi-framework-dashboard
+---
+layout: 'layouts/Layout.astro'
+page: About
+---
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/EmaSuriano/astro-multi-framework-dashboard/tree/latest/examples/basics)
+# About
 
 > Dashboard built with Astro with the framework setup for React.JS, Vue and Svelte.
 
 ![Meme](https://user-images.githubusercontent.com/3399429/197223784-05878981-08b2-498c-a333-7dcd7d636807.jpeg)
 
-## [Demo](https://astro-multi-framework-dashboard.netlify.app)
+## [Github repository](https://github.com/EmaSuriano/astro-multi-framework-dashboard)
 
 ## Features
 
