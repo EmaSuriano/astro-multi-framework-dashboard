@@ -131,10 +131,10 @@
     node-fetch "^3.2.5"
     which-pm-runs "^1.1.0"
 
-"@astrojs/vue@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@astrojs/vue/-/vue-1.2.0.tgz#1de3265456f22bd05fe8069f7ff2ac1bc3b45e99"
-  integrity sha512-a0O7j4MMCmbqWKPeWKcisUQoJAgpV5Z/UPh6DN5BPvsuEKOj1tGqQqMHOLIyMWBx1ICrp2iEpcl4I1fj5QVJGg==
+"@astrojs/vue@^1.2.1":
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/@astrojs/vue/-/vue-1.2.1.tgz#1bcd2f18aad4545f288e438ae152569284a96abe"
+  integrity sha512-o/tmgrK5CaZX5yY+5BgatpcL3ItfSKSAvM5/hTSRkXIWMOgxHqST8tKjDhCgVUAhCzrzVBUIs/qXaLa+Tv00nQ==
   dependencies:
     "@vitejs/plugin-vue" "^3.0.0"
     "@vitejs/plugin-vue-jsx" "^2.0.1"
