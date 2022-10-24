@@ -818,10 +818,10 @@
   resolved "https://registry.yarnpkg.com/@threlte/core/-/core-4.3.2.tgz#f6903c1388f9524b77abb0e892ec9b7d00b82942"
   integrity sha512-CiXT8CCpqxg0Ss15xn2fpJtMGtXxH1hKjhkf/zfETdU/ZtkuPSMQxnuE7exnXMySHsccmyGH66o1cgKZZ1UE4A==
 
-"@threlte/extras@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@threlte/extras/-/extras-4.3.0.tgz#17646c50a718f4208fd8ca61ced369330d43b6f1"
-  integrity sha512-9C6A+dGuaL0AWfxfARAa7Y07khAtfZQ5a3tkd+lbJLhIjO0XO6ESKTXfPJlRPurUPS7Tlmuu+Uw/xo3QlbZ2/g==
+"@threlte/extras@^4.4.1":
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/@threlte/extras/-/extras-4.4.1.tgz#f49eee067ec7e0906d36c462f4dd9242ffffd8c3"
+  integrity sha512-7hrSqV0JOb8aVwUdkejyXuZY3T9j6FsDJqfg2+/+dT4YYdmxV3pZtr1GdP5gNgnI4Z92PH9cEuePhkHo2BkSYg==
   dependencies:
     troika-three-text "^0.46.4"
 

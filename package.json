@@ -24,7 +24,7 @@
     "@nanostores/vue": "^0.6.0",
     "@tailwindcss/typography": "^0.5.7",
     "@threlte/core": "^4.3.2",
-    "@threlte/extras": "^4.3.0",
+    "@threlte/extras": "^4.4.1",
     "astro": "^1.5.2",
     "html-to-image": "^1.10.8",
     "nanostores": "^0.7.0",
