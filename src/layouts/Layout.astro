@@ -3,8 +3,8 @@ import 'styles.css';
 import Footer from 'components/Footer.astro';
 import Header from 'components/Header.astro';
 
-const VARIANT_PADDING_MAP = {
-  blog: 'tw-prose tw-prose-invert',
+const VARIANT_CLASS_MAP = {
+  blog: 'tw-prose dark:tw-prose-invert',
   page: 'tw-px-4',
 };
 
@@ -13,18 +13,11 @@ type Props = {
   variant?: 'page' | 'blog';
 };
 
-const getVariant = () => {
-  if (Boolean(Astro.props.frontmatter)) {
-    return 'blog';
-  }
-
-  return 'page';
-};
-
 const { page } = (Astro.props.frontmatter || Astro.props) as Props;
 
 const title = 'Multi Framework Dashboard';
-const paddingClass = VARIANT_PADDING_MAP[getVariant()];
+const variantClass =
+  VARIANT_CLASS_MAP[Astro.props.frontmatter ? 'blog' : 'page'];
 ---
 
 <!DOCTYPE html>
@@ -43,7 +36,7 @@ const paddingClass = VARIANT_PADDING_MAP[getVariant()];
         class="tw-relative tw-bg-white dark:tw-bg-slate-800 tw-flex tw-flex-col tw-flex-1 tw-overflow-y-auto tw-overflow-x-hidden"
       >
         <Header title={title} page={page} />
-        <div class={`tw-container tw-mx-auto tw-my-10 ${paddingClass}`}>
+        <div class={`tw-container tw-mx-auto tw-my-10 ${variantClass}`}>
           <slot />
         </div>
         <Footer />
