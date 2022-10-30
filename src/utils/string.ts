@@ -1,2 +1,5 @@
 export const humanize = (str: string) =>
-  str[0]?.toUpperCase() + str.slice(1, str.length);
+  str
+    .split('-')
+    .map((subStr) => subStr[0]?.toUpperCase() + subStr.slice(1, subStr.length))
+    .join(' ');

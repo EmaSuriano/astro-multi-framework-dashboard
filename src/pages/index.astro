@@ -1,36 +1,56 @@
 ---
-import Layout from 'layouts/Layout.astro'; // astro
-import Card from 'components/Card.astro';
+// Astro
+import Layout from 'layouts/Layout.astro';
+import type { Product } from 'types';
 
-import BasicButtons from 'components/BasicButtons'; //react
-import { HighlighterWrapper, HighlighterToggle } from 'components/Highlighter'; //react
+// React
+import { HighlighterWrapper, HighlighterToggle } from 'components/Highlighter';
+import CategoryChart from 'components/CategoryChart';
 
-import Graph from 'components/Graph.svelte'; // svelte
+// Svelte
+import Tags from 'components/Tags.svelte';
+import ProductTable from 'components/ProductTable.svelte';
 
-import GraphVue from 'components/Graph.vue'; // vue
+// Vue
+import Banner from 'components/Banner.vue';
+import Overview from 'components/Overview.vue';
+
+// fetch data
+const products = await fetch('https://dummyjson.com/products')
+  .then((res) => res.json())
+  .then((res) => res.products as Product[]);
 ---
 
 <Layout page="Home">
-  <HighlighterToggle client:load />
-  <div
-    class="tw-grid sm:tw-grid-cols-1 md:tw-grid-cols-3 tw-gap-4 lg:tw-grid-cols-5"
-  >
-    <Card title="Cube">
-      <HighlighterWrapper client:load framework="svelte">
-        <Graph client:load />
-      </HighlighterWrapper>
-    </Card>
+  <HighlighterToggle client:idle />
 
-    <Card title="Line graph" className="tw-col-span-2">
-      <HighlighterWrapper client:load framework="react">
-        <BasicButtons client:load />
-      </HighlighterWrapper>
-    </Card>
+  <div class="tw-grid tw-grid-cols-1 tw-gap-4 md:tw-grid-cols-5 md:tw-gap-10">
+    <HighlighterWrapper
+      client:idle
+      framework="vue"
+      className="tw-col-span-full"
+    >
+      <Banner client:load />
+    </HighlighterWrapper>
 
-    <Card title="Timeline" className="tw-col-span-2">
-      <HighlighterWrapper client:load framework="vue">
-        <GraphVue client:load />
-      </HighlighterWrapper>
-    </Card>
+    <HighlighterWrapper client:idle framework="svelte">
+      <Tags client:load products={products} />
+    </HighlighterWrapper>
+
+    <HighlighterWrapper client:idle framework="vue">
+      <Overview client:load products={products} />
+    </HighlighterWrapper>
+
+    <HighlighterWrapper client:idle framework="react" className="tw-col-span-3">
+      <CategoryChart client:load products={products} />
+    </HighlighterWrapper>
+
+    <HighlighterWrapper
+      client:load
+      framework="svelte"
+      className="tw-col-span-full"
+    >
+      <ProductTable client:load products={products} />
+    </HighlighterWrapper>
   </div>
 </Layout>

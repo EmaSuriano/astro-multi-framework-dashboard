@@ -11,11 +11,11 @@
 ## Features
 
 - Support for React, Vue and Svelte.
-- Setup with [Tailwind CSS](https://tailwindcss.com/)
+- Setup with [Tailwind CSS](https://tailwindcss.com/) and `prefix` property to avoid classes clash with Vuetify.
 - State management with [nanostores](https://github.com/nanostores/nanostores) for cross platform data flow.
 - Libraries per framework:
   - React: [recharts](https://recharts.org/), [MUI Core](https://mui.com/core/)
-  - Svelte: [svelthree](https://svelthree.dev/)
+  - Svelte: [Svelte Material UI](https://sveltematerialui.com/)
   - Vue: [Vuetify](https://vuetifyjs.com/en/)
 - Framework highlighter for demo purposes, showcasing which components are rendered by which framework.
 

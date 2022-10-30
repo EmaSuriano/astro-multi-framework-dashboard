@@ -1,5 +1,8 @@
 ---
-import { getPages } from 'utils/pages';
+const PAGES = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+];
 
 export type Props = {
   page: string;
@@ -7,13 +10,9 @@ export type Props = {
 };
 
 const { title, page } = Astro.props as Props;
-
-const pages = await getPages();
 ---
 
-<nav
-  class="tw-bg-white tw-shadow-sm tw-px-2 sm:tw-px-4 tw-py-2.5 dark:tw-bg-gray-900"
->
+<nav class="tw-bg-white tw-shadow-sm tw-px-2 sm:tw-px-4 tw-py-2.5">
   <div
     class="container tw-flex tw-flex-wrap tw-justify-between tw-items-center tw-mx-auto"
   >
@@ -24,14 +23,14 @@ const pages = await getPages();
         alt="Astro Logo"
       />
       <span
-        class="tw-self-center tw-text-xl tw-font-semibold tw-whitespace-nowrap dark:tw-text-white"
+        class="tw-self-center tw-text-xl tw-font-semibold tw-whitespace-nowrap"
         >{title}
       </span>
     </a>
     <button
       data-collapse-toggle="navbar-default"
       type="button"
-      class="tw-inline-flex tw-items-center tw-p-2 tw-ml-3 tw-text-sm tw-text-gray-500 tw-rounded-lg md:tw-hidden hover:tw-bg-gray-100 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-gray-200 dark:tw-text-gray-400 dark:hover:tw-bg-gray-700 dark:focus:tw-ring-gray-600"
+      class="tw-inline-flex tw-items-center tw-p-2 tw-ml-3 tw-text-sm tw-text-gray-500 tw-rounded-lg md:tw-hidden hover:tw-bg-gray-100 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-gray-200"
       aria-controls="navbar-default"
       aria-expanded="false"
     >
@@ -53,16 +52,16 @@ const pages = await getPages();
       id="navbar-default"
     >
       <ul
-        class="tw-flex tw-flex-col tw-p-4 tw-mt-4 tw-bg-gray-50 tw-rounded-lg tw-border tw-border-gray-100 md:tw-flex-row md:tw-space-x-8 md:tw-mt-0 md:tw-text-sm md:tw-font-medium md:tw-border-0 md:tw-bg-white dark:tw-bg-gray-800 md:dark:tw-bg-gray-900 dark:tw-border-gray-700"
+        class="tw-flex tw-flex-col tw-p-4 tw-mt-4 tw-bg-gray-50 tw-rounded-lg tw-border tw-border-gray-100 md:tw-flex-row md:tw-space-x-8 md:tw-mt-0 md:tw-text-sm md:tw-font-medium md:tw-border-0 md:tw-bg-white"
       >
         {
-          pages.map((link) => (
+          PAGES.map((link) => (
             <li>
               <a
                 href={link.href}
-                class={`tw-block tw-py-2 tw-pr-4 tw-pl-3 ${
+                class={`tw-block tw-py-2 tw-pr-4 tw-pl-3 tw-rounded md:tw-bg-transparent md:tw-p-0 ${
                   link.label === page ? 'tw-text-blue-700' : 'tw-text-gray-700'
-                } tw-bg-blue-700 tw-rounded md:tw-bg-transparent md:tw-p-0 dark:tw-text-white`}
+                }`}
                 aria-current="page"
               >
                 {link.label}

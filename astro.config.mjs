@@ -18,7 +18,14 @@ export default defineConfig({
   ],
   vite: {
     ssr: {
-      noExternal: ['three', 'troika-three-text', 'vuetify'],
+      noExternal: [
+        'three',
+        'troika-three-text',
+        'vuetify',
+        '@smui-extra/accordion',
+        '@smui/data-table',
+        '@smui',
+      ],
     },
   },
 });

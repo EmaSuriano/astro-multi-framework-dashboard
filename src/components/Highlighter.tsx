@@ -2,6 +2,7 @@ import { useStore } from '@nanostores/react';
 import type { ReactNode } from 'react';
 import { isFrameworkVisible } from '../utils/state';
 import { humanize } from '../utils/string';
+import Fab from '@mui/material/Fab';
 
 const FRAMEWORK_COLOR_MAP = {
   react: 'tw-bg-blue-400',
@@ -9,21 +10,17 @@ const FRAMEWORK_COLOR_MAP = {
   vue: 'tw-bg-green-400',
 };
 
-type Props = {
-  framework: 'react' | 'svelte' | 'vue';
-  children: ReactNode;
-};
-
 export const HighlighterToggle = () => {
   const visible = useStore(isFrameworkVisible);
 
   return (
-    <div className="tw-text-white">
-      <button
-        type="button"
-        className="tw-absolute tw-opacity-50 hover:tw-opacity-100 tw-right-10 tw-transition-all tw-drop-shadow-lg hover:tw-drop-shadow-xl tw-bottom-10 tw-text-white tw-bg-blue-500 focus:tw-ring-4 focus:tw-outline-none focus:tw-ring-blue-300 tw-font-medium tw-rounded-full tw-text-sm tw-p-4 tw-text-center tw-inline-flex tw-items-center tw-mr-2 dark:tw-bg-blue-600 dark:hover:tw-bg-blue-700 dark:focus:tw-ring-blue-800"
-        onClick={() => isFrameworkVisible.set(!visible)}
-      >
+    <Fab
+      style={{ position: 'fixed', bottom: 40, right: 40 }}
+      color="primary"
+      aria-label="Show framework"
+      onClick={() => isFrameworkVisible.set(!visible)}
+    >
+      {visible ? (
         <svg
           className="tw-w-6 tw-h-6"
           fill="none"
@@ -34,39 +31,65 @@ export const HighlighterToggle = () => {
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth="2"
-            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-          ></path>
+            strokeWidth={2}
+            d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"
+          />
+        </svg>
+      ) : (
+        <svg
+          className="tw-w-6 tw-h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
-            strokeWidth="2"
+            strokeWidth={2}
             d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-          ></path>
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+          />
         </svg>
-        <span className="tw-sr-only">Show Framework</span>
-      </button>
-    </div>
+      )}
+    </Fab>
   );
 };
 
-export const HighlighterWrapper = ({ children, framework }: Props) => {
+type Props = {
+  framework: 'react' | 'svelte' | 'vue';
+  children: ReactNode;
+  className?: string;
+};
+
+export const HighlighterWrapper = ({
+  children,
+  framework,
+  className,
+}: Props) => {
   const visible = useStore(isFrameworkVisible);
   const color = visible ? FRAMEWORK_COLOR_MAP[framework] : 'tw-bg-inherit';
 
   const display = visible ? 'tw-visible' : 'tw-invisible';
 
   return (
-    <div className="tw-relative">
-      <div className={`tw-p-1 ${color}`}>
-        <div className="tw-bg-white tw-rounded m-1">{children}</div>
-      </div>
+    children && (
+      <div className={`tw-relative ${className}`}>
+        <div className={`tw-p-1 ${color}`}>
+          <div className="tw-bg-white tw-rounded m-1">{children}</div>
+        </div>
 
-      <span
-        className={`tw-w-fit tw-p-1 tw-absolute tw-right-0 tw-bottom-30 tw-z-10 ${color} ${display}`}
-      >
-        {humanize(framework)}
-      </span>
-    </div>
+        <span
+          className={`tw-w-fit tw-p-1 tw-absolute tw-right-0 tw-bottom-30 tw-z-10 ${color} ${display}`}
+        >
+          {humanize(framework)}
+        </span>
+      </div>
+    )
   );
 };
