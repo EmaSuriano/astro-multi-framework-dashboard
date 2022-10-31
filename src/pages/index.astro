@@ -22,7 +22,7 @@ const products = await fetch('https://dummyjson.com/products')
 ---
 
 <Layout page="Home">
-  <HighlighterToggle client:idle />
+  <HighlighterToggle client:only="react" />
 
   <div class="tw-grid tw-grid-cols-1 tw-gap-4 md:tw-grid-cols-5 md:tw-gap-10">
     <HighlighterWrapper
@@ -42,11 +42,11 @@ const products = await fetch('https://dummyjson.com/products')
     </HighlighterWrapper>
 
     <HighlighterWrapper client:idle framework="react" className="tw-col-span-3">
-      <CategoryChart client:load products={products} />
+      <CategoryChart client:only="react" products={products} />
     </HighlighterWrapper>
 
     <HighlighterWrapper
-      client:load
+      client:idle
       framework="svelte"
       className="tw-col-span-full"
     >

@@ -11,21 +11,12 @@ export default defineConfig({
   integrations: [
     tailwind(),
     react(),
-    vue({
-      appEntrypoint: '/src/pages/_app',
-    }),
+    vue({ appEntrypoint: '/src/pages/_app' }),
     svelte(),
   ],
   vite: {
     ssr: {
-      noExternal: [
-        'three',
-        'troika-three-text',
-        'vuetify',
-        '@smui-extra/accordion',
-        '@smui/data-table',
-        '@smui',
-      ],
+      noExternal: ['vuetify', '@smui/data-table', '@smui/chips'],
     },
   },
 });
