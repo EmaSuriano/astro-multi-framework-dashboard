@@ -16,7 +16,7 @@
     "@astrojs/tailwind": "^2.1.1",
     "@astrojs/vue": "^1.2.1",
     "@emotion/react": "^11.10.4",
-    "@emotion/styled": "^11.10.4",
+    "@emotion/styled": "^11.10.5",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.10",
     "@nanostores/react": "^0.4.0",
