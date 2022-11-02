@@ -11,7 +11,7 @@
               {{
                 getTotalStock(
                   props.products.filter(
-                    (product) => !$disableCategories.includes(product.category),
+                    (product) => !$hiddenCategories.includes(product.category),
                   ),
                 )
               }}
@@ -28,7 +28,7 @@
               {{
                 getBrands(
                   props.products.filter(
-                    (product) => !$disableCategories.includes(product.category),
+                    (product) => !$hiddenCategories.includes(product.category),
                   ),
                 ).length
               }}
@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import type { Product } from 'types';
-import { disableCategories } from 'utils/state';
+import { hiddenCategories } from 'utils/state';
 import { useStore } from '@nanostores/vue';
 import { getBrands, getTotalStock } from 'utils/product';
 
@@ -51,5 +51,5 @@ type Props = {
 };
 
 const props = defineProps<Props>();
-const $disableCategories = useStore(disableCategories);
+const $hiddenCategories = useStore(hiddenCategories);
 </script>

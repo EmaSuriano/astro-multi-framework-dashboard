@@ -1,7 +1,7 @@
 <script lang="ts">
   import DataTable, { Head, Body, Row, Cell } from '@smui/data-table';
   import type { Product } from 'types';
-  import { disableCategories } from 'utils/state';
+  import { hiddenCategories } from 'utils/state';
   import { humanize } from 'utils/string';
 
   export let products: Product[];
@@ -18,7 +18,7 @@
     </Row>
   </Head>
   <Body>
-    {#each products.filter((product) => !$disableCategories.includes(product.category)) as item (item.id)}
+    {#each products.filter((product) => !$hiddenCategories.includes(product.category)) as item (item.id)}
       <Row>
         <Cell>{item.title}</Cell>
         <Cell>{humanize(item.category)}</Cell>

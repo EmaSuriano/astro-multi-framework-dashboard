@@ -13,7 +13,7 @@ import {
   groupByCategory,
   getRating,
 } from 'utils/product';
-import { disableCategories } from 'utils/state';
+import { hiddenCategories } from 'utils/state';
 import randomColor from 'randomcolor';
 import { humanize } from 'utils/string';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
@@ -35,7 +35,7 @@ type View = 'stock' | 'rating';
 const CategoryChart = (props: Props) => {
   const [view, setView] = React.useState<View>('stock');
 
-  const disabledCategories = useStore(disableCategories);
+  const disabledCategories = useStore(hiddenCategories);
   const categories = getCategories(props.products);
   const groupedByCategory = groupByCategory(props.products);
 

@@ -3,7 +3,7 @@
   import { getCategories } from 'utils/product';
   import type { Product } from 'types';
   import { humanize } from 'utils/string';
-  import { disableCategories } from 'utils/state';
+  import { hiddenCategories } from 'utils/state';
 
   export let products: Product[];
 
@@ -11,7 +11,7 @@
   let selected: string[] = Array.from(categories);
 
   function updateSelection() {
-    disableCategories.set(
+    hiddenCategories.set(
       categories.filter((category) => !selected.includes(category)),
     );
   }
