@@ -16,7 +16,7 @@ export default defineConfig({
   ],
   vite: {
     ssr: {
-      noExternal: ['vuetify', '@smui/data-table', '@smui/chips'],
+      noExternal: ['vuetify', '@smui/**/*'],
     },
   },
 });

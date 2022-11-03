@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import type { Product } from 'types';
+import { hiddenCategories } from 'utils/state';
+import { useStore } from '@nanostores/vue';
+import { getBrands, getTotalStock } from 'utils/product';
+
+type Props = {
+  products: Product[];
+};
+
+const props = defineProps<Props>();
+const $hiddenCategories = useStore(hiddenCategories);
+</script>
+
 <template>
   <h1>Overview</h1>
 
@@ -39,17 +53,3 @@
     </v-row>
   </v-container>
 </template>
-
-<script setup lang="ts">
-import type { Product } from 'types';
-import { hiddenCategories } from 'utils/state';
-import { useStore } from '@nanostores/vue';
-import { getBrands, getTotalStock } from 'utils/product';
-
-type Props = {
-  products: Product[];
-};
-
-const props = defineProps<Props>();
-const $hiddenCategories = useStore(hiddenCategories);
-</script>
