@@ -23,7 +23,7 @@
     "@nanostores/vue": "^0.6.1",
     "@tailwindcss/typography": "^0.5.7",
     "astro": "^1.6.3",
-    "nanostores": "^0.7.0",
+    "nanostores": "^0.7.1",
     "randomcolor": "^0.6.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
