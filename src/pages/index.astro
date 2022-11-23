@@ -24,7 +24,7 @@ const products = await fetch('https://dummyjson.com/products')
 <Layout page="Home">
   <HighlighterToggle client:only="react" />
 
-  <div class="tw-grid tw-grid-cols-1 tw-gap-4 md:tw-grid-cols-5 md:tw-gap-10">
+  <div class="tw-grid tw-gap-4 tw-grid-cols-3 lg:tw-grid-cols-5 md:tw-gap-10">
     <HighlighterWrapper
       client:idle
       framework="vue"

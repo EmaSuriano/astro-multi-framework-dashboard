@@ -22,6 +22,7 @@ const $hiddenCategories = useStore(hiddenCategories);
           <v-card-text>
             <div>Total stock</div>
             <p class="text-h4 text--primary">
+              <!-- Calculating stock with value from store -->
               {{
                 getTotalStock(
                   props.products.filter(
@@ -39,6 +40,7 @@ const $hiddenCategories = useStore(hiddenCategories);
           <v-card-text>
             <div>Total brands</div>
             <p class="text-h4 text--primary">
+              <!-- Calculating brand amount with value from store -->
               {{
                 getBrands(
                   props.products.filter(
