@@ -37,6 +37,6 @@
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "@types/randomcolor": "^0.5.7",
-    "@types/react": "^18.0.25"
+    "@types/react": "^18.0.26"
   }
 }
