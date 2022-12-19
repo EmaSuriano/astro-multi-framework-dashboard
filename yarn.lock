@@ -6086,10 +6086,10 @@ vue@^3.2.45:
     "@vue/server-renderer" "3.2.45"
     "@vue/shared" "3.2.45"
 
-vuetify@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.3.tgz#444968004dc413af9e7732cece0d56faed51c33a"
-  integrity sha512-ODqnS2ux/qUjn/E7W600mvy096nUSSf1mEgYN9o1IpfeNOC7RsakPD37t3zmtift54YTrE/upjSpILg3piYKmQ==
+vuetify@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.0.5.tgz#f9dc3942ce81d7f00e3aabce23074df37a14705d"
+  integrity sha512-ciX+9XuHQ4zx27dEceHrs6xuCeqPgo91DhvCm+udbp0Qg95phad03uVcdHvyv1XW/stgdZGneiqg5dxQvLGzPw==
 
 wcwidth@^1.0.1:
   version "1.0.1"
